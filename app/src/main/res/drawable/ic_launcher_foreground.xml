@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Outer Turquoise Speech Bubble -->
+    <path
+        android:fillColor="#13A79E"
+        android:pathData="M 24,24 H 84 A 6,6 0 0 1 90,30 V 70 A 6,6 0 0 1 84,76 H 50 L 36,90 V 76 H 24 A 6,6 0 0 1 18,70 V 30 A 6,6 0 0 1 24,24 Z" />
+
+    <!-- Pure White Inner Text Message Envelope/Redirection Shape -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 32,36 H 76 A 4,4 0 0 1 80,40 V 60 A 4,4 0 0 1 76,64 H 32 A 4,4 0 0 1 28,60 V 40 A 4,4 0 0 1 32,36 Z M 34,42 V 58 L 52,50 Z M 74,42 L 56,50 L 74,58 Z" />
+
+    <!-- Starburst golden action badge representing rapid shortcut in the top-right -->
+    <path
+        android:fillColor="#E5A93B"
+        android:pathData="M 78,16 L 82,24 L 90,26 L 84,32 L 86,40 L 78,36 L 70,40 L 72,32 L 66,26 L 74,24 Z" />
+
+</vector>

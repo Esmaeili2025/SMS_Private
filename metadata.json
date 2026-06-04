@@ -1,0 +1,6 @@
+{
+  "name": "میانبر پیامکی شماره‌گیر",
+  "description": "ارسال خودکار پیامک‌های سفارشی با شماره‌گیری کدهای میانبر در شماره‌گیر تلفن همراه",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
