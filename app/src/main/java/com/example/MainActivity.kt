@@ -150,6 +150,7 @@ fun SmsShortcutDialApp() {
     var isAddOrEditOpen by remember { mutableStateOf(false) }
     var selectedForEdit by remember { mutableStateOf<ShortcutContact?>(null) }
     var isDeleteConfirmOpen by remember { mutableStateOf<ShortcutContact?>(null) }
+    var isAboutOpen by remember { mutableStateOf(false) }
 
     Scaffold(
         modifier = Modifier
@@ -172,6 +173,15 @@ fun SmsShortcutDialApp() {
                             fontWeight = FontWeight.Bold,
                             color = Color.White,
                             style = MaterialTheme.typography.titleLarge
+                        )
+                    }
+                },
+                actions = {
+                    IconButton(onClick = { isAboutOpen = true }) {
+                        Icon(
+                            imageVector = Icons.Default.Info,
+                            contentDescription = "درباره برنامه",
+                            tint = PersianTurquoiseLight
                         )
                     }
                 },
@@ -418,6 +428,93 @@ fun SmsShortcutDialApp() {
             dismissButton = {
                 TextButton(onClick = { isDeleteConfirmOpen = null }) {
                     Text("انصراف", color = Color.White)
+                }
+            },
+            containerColor = SurfaceDark,
+            titleContentColor = Color.White,
+            textContentColor = LightGrayText
+        )
+    }
+
+    // Modal About App
+    if (isAboutOpen) {
+        AlertDialog(
+            onDismissRequest = { isAboutOpen = false },
+            title = {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Info,
+                        contentDescription = "درباره برنامه",
+                        tint = ElegantPrimary
+                    )
+                    Text("درباره برنامه", fontWeight = FontWeight.Bold)
+                }
+            },
+            text = {
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    Text(
+                        text = "این برنامه به شما امکان می‌دهد کدهای میانبر شماره‌گیر تلفن همراه را تعریف و مدیریت کنید. با شماره‌گیری هر میانبر در گوشی، عملیات فرآیند تماس قطع شده و پیامک تعیین‌شده مرتبط با آن خودکار ارسال می‌گردد.",
+                        color = LightGrayText,
+                        fontSize = 13.sp,
+                        lineHeight = 20.sp
+                    )
+                    
+                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(ElegantBorder))
+                    
+                    Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        Text(
+                            text = "تهیه کننده برنامه:",
+                            color = ElegantPrimary,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 12.sp
+                        )
+                        Text(
+                            text = "مهدی اسماعیلی",
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 14.sp
+                        )
+                        Text(
+                            text = "سرپرست فناوری اطلاعات و ارتباطات شرکت عمران آذرستان",
+                            color = LightGrayText,
+                            fontSize = 13.sp,
+                            lineHeight = 18.sp
+                        )
+                    }
+                    
+                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(ElegantBorder))
+                    
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "نسخه برنامه:",
+                            color = ElegantPrimary,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 12.sp
+                        )
+                        Text(
+                            text = "۱.۲.۰",
+                            color = Color.White,
+                            fontWeight = FontWeight.Medium,
+                            fontSize = 13.sp
+                        )
+                    }
+                }
+            },
+            confirmButton = {
+                Button(
+                    onClick = { isAboutOpen = false },
+                    colors = ButtonDefaults.buttonColors(containerColor = ElegantPrimary, contentColor = ElegantOnPrimary)
+                ) {
+                    Text("بستن", fontWeight = FontWeight.Bold)
                 }
             },
             containerColor = SurfaceDark,
